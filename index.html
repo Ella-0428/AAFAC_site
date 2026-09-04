@@ -169,7 +169,7 @@
 
       header.site-header.scrolled {
         padding: 12px 0;
-        background: rgba(51, 48, 48, 0.96);
+        background: rgba(255, 254, 254, 0.96);
         backdrop-filter: blur(10px);
         border-bottom: 1px solid var(--line);
       }
@@ -215,6 +215,7 @@
         font-size: 19px;
         letter-spacing: 0.3px;
         line-height: 1.05;
+        color: #1d1e21;
       }
 
       .brand-name small {
@@ -246,7 +247,7 @@
         padding: 10px 8px;
         border-radius: 3px;
 
-        color: var(--off-white);
+        color: #1d1e21;
 
         position: relative;
 
@@ -954,105 +955,7 @@
 }
 
 
-      /* ================= TORCIDA ================= */
-
-      .fans-section {
-        position: relative;
-
-        padding: 150px 0;
-
-        text-align: center;
-
-        overflow: hidden;
-
-        background:
-          radial-gradient(
-            ellipse 80% 70% at 50% 30%,
-            rgba(229, 57, 53, 0.28),
-            transparent 65%
-          ),
-          linear-gradient(180deg, #18181b, #303036 55%, #18181b);
-      }
-
-      .fans-section::before {
-        content: "";
-
-        position: absolute;
-        inset: 0;
-
-        background-image: repeating-linear-gradient(
-          0deg,
-          rgba(244, 242, 236, 0.03) 0 1px,
-          transparent 1px 40px
-        );
-      }
-
-      .fans-content {
-        position: relative;
-
-        z-index: 2;
-
-        max-width: 760px;
-
-        margin: 0 auto;
-      }
-
-      .fans-title {
-        font-family: var(--font-display);
-
-        font-weight: 900;
-
-        font-size: clamp(38px, 6vw, 72px);
-
-        line-height: 1;
-      }
-
-      .fans-title .line2 {
-        color: var(--coral);
-      }
-
-      .fans-stats {
-        position: relative;
-
-        z-index: 2;
-
-        max-width: var(--container);
-
-        margin: 70px auto 0;
-
-        padding: 44px 28px 0;
-
-        display: grid;
-
-        grid-template-columns: repeat(4, 1fr);
-
-        gap: 24px;
-
-        border-top: 1px solid var(--line);
-      }
-
-      .fans-stat {
-        text-align: center;
-      }
-
-      .fans-stat .num {
-        font-family: var(--font-display);
-
-        font-weight: 800;
-
-        font-size: 38px;
-
-        color: var(--coral);
-      }
-
-      .fans-stat .lbl {
-        font-size: 12.5px;
-
-        color: var(--steel-light);
-
-        margin-top: 6px;
-      }
-
+      
       /* ================= SÓCIO ================= */
 
       .plans-grid {
@@ -1407,6 +1310,23 @@
       .feed-item:hover {
         transform: scale(1.03);
       }
+
+      .card-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+/* Formatação exata da foto no padrão 3x4 */
+.foto-3x4 {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+}
 
       /* ================= TRANSPARÊNCIA ================= */
 
@@ -1833,7 +1753,7 @@
      HERO
 ========================================================= -->
 
-    <section class="hero" id="inicio" style="background-image: url('./aafacmelhorda2.jpg'); background-size: cover;"
+    <section class="hero" id="inicio" style="background-image: url('./WhatsApp\ Image\ 2026-07-22\ at\ 20.04.38.jpeg'); background-size: cover;"
   
       <div class="hero-bg">
         <div class="glow"></div>
@@ -2207,12 +2127,14 @@
             href="https://www.instagram.com/aafac1933/"
             class="social-btn"
             target="_blank"
-            rel="noopener noreferrer"
-          >
+            rel="noopener noreferrer">
             Instagram
           </a>
 
-          <a href="#" class="social-btn"> Facebook </a>
+          <a href="https://www.linkedin.com/in/associa%C3%A7%C3%A3o-amigos-ferrovi%C3%A1rio-atl%C3%A9tico-clube-047b83433/"
+            class="social-btn"
+            target="_blank"
+            rel="noopener noreferrer"> LinkedIn </a>
 
           <a href="#" class="social-btn"> YouTube </a>
 
@@ -2226,8 +2148,8 @@
 
           <div class="feed-item">
             <img
-              src="free-facebook-icon-svg-download-png-432507.webp"
-              alt="Facebook da AAFAC"
+              src="logo-linkedin-icon-4096.webp"
+              alt="LinkedIn da AAFAC"
             />
           </div>
 
@@ -2592,28 +2514,56 @@ obrigações da Associação. </p>
 convocada Assembleia Geral Extraordinária presentes no mínimo 2/3 (dois terços)
 dos associados. </p>
 
-<h2 class="section-title">FERROVIÁRIO ASSOCIAÇÃO</h2>
-<p><strong>Presidente:</strong> Rodger Raniery Holanda Costa<br>
-<strong>Vice-Presidente:</strong> Francisco Barros Machado Neto<br>
-<strong>Diretor de Marketing:</strong> Moisés Viana Saraiva Jr.<br>
-<strong>Diretor de Comunicação:</strong> Felipe Lima Cacau<br>
-<strong>Diretor de Patrimônio:</strong> José Airton de Oliveira<br>
-<strong>Diretor de Cultura e Artes:</strong> Jeff Peixoto<br>
-<strong>Diretor de Esportes:</strong> Wander Alencar<br>
-<strong>Diretor de Governança e Estratégia:</strong> Edinardo Costa<br>
-<strong>Diretor Social:</strong> Flávio José de Sousa<br>
-<strong>Diretor Administrativo/Financeiro:</strong> José Maria Costa Filho<br>
-<strong>Diretor Jurídico:</strong> José Valdir Ximenes Neto<br>
-<strong>Diretor Institucional:</strong> João Gomes Frota Neto<br>
-<strong>Presidente de Honra:</strong> Valdir Queiroz Sampaio</p>
+
           </div>
         </div>
       </div>
       
     </section>
-
     <!-- =========================================================
-     CONTATO
+     MEMBROS AAFAC
+========================================================= -->
+
+    <section class="section-pad-sm" id="redes">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <h2 class="section-title">FERROVIÁRIO ASSOCIAÇÃO</h2>
+      </div>
+    </div>
+
+    <div class="social-grid reveal">
+      
+      <a href="#" class="social-btn card-social">
+        <span class="nome">Presidente: Carlos André Nogueira de Souza</span>
+        <img src="Carlos Andre.jpeg" alt="Presidente" class="foto-3x4" />
+      </a>
+
+      <a href="#" class="social-btn card-social">
+        <span class="nome">Vice Presidente: Carlos Emmanuel Garcia</span>
+        <img src="Emmanuel.jpeg" alt="Vice-Presidente" class="foto-3x4" />
+      </a>
+
+      <a href="#" class="social-btn card-social">
+        <span class="nome">Tesouraria: José Maria Costa Filho</span>
+        <img src="José Maria.jpeg" alt="Tesouraria" class="foto-3x4" />
+      </a>
+
+      <a href="#" class="social-btn card-social">
+        <span class="nome">Secretário: Felipe Lima Cacau</span>
+        <img src="Felipe.jpeg" alt="Secretário" class="foto-3x4" />
+      </a>
+
+      <a href="#" class="social-btn card-social">
+        <span class="nome">Presidente do Conselho Fiscal: Cassio Pinheiro Cacau</span>
+        <img src="Cassio.jpeg" alt="Presidente do Conselho Fiscal" class="foto-3x4" />
+      </a>
+
+    </div>
+  </div>
+</section>
+    <!-- =========================================================
+      CONTATO
 ========================================================= -->
 
     <section class="section-pad" id="contato">
