@@ -1,0 +1,3176 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>AAFAC — Portal Oficial</title>
+
+    <meta
+      name="description"
+      content="Portal oficial do Ferroviário Atlético Clube. Notícias, elenco, jogos, tabela, sócio-torcedor e a história da Nação Coral desde 1933."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --black: #18181b;
+        --black-2: #242428;
+        --black-3: #303036;
+
+        --coral: #e53935;
+        --coral-dark: #c62828;
+        --rail-red: #9e2925;
+
+        --steel: #66666d;
+        --steel-light: #b8b8be;
+
+        --off-white: #f5f5f5;
+        --white: #ffffff;
+
+        --brass: #d4af37;
+
+        --line: rgba(255, 255, 255, 0.14);
+        --line-strong: rgba(255, 255, 255, 0.25);
+
+        --font-display: "Big Shoulders Display", sans-serif;
+        --font-body: "Inter", sans-serif;
+
+        --container: 1240px;
+      }
+
+      /* ================= RESET ================= */
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--black);
+        color: var(--white);
+        font-family: var(--font-body);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      button {
+        font-family: inherit;
+        cursor: pointer;
+        border: none;
+        background: none;
+        color: inherit;
+      }
+
+      input,
+      textarea {
+        font-family: inherit;
+      }
+
+      section {
+        position: relative;
+        scroll-margin-top: 100px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--coral);
+        outline-offset: 3px;
+      }
+
+      /* ================= CONTAINER ================= */
+
+      .container {
+        max-width: var(--container);
+        margin: 0 auto;
+        padding: 0 28px;
+      }
+
+      /* ================= RAIL ================= */
+
+      .rail-divider {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+      }
+
+      .rail-divider .track {
+        flex: 1;
+        height: 1px;
+        background: repeating-linear-gradient(
+          90deg,
+          var(--line-strong) 0 14px,
+          transparent 14px 26px
+        );
+      }
+
+      .rail-divider .rivet {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--coral);
+        flex-shrink: 0;
+      }
+
+      /* ================= HEADER ================= */
+
+      header.site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+
+        padding: 22px 0;
+
+        transition:
+          padding 0.35s ease,
+          background 0.35s ease,
+          border-color 0.35s ease;
+
+        border-bottom: 1px solid transparent;
+      }
+
+      header.site-header.scrolled {
+        padding: 12px 0;
+        background: rgba(51, 48, 48, 0.96);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+
+      .brand-mark {
+      border-radius: 0;
+  background: transparent;
+  overflow: visible;
+
+  /* Ajusta o tamanho da imagem proporcionalmente */
+  width: auto;
+  height: 50px; /* Altere a altura conforme o tamanho desejado para a barra */
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+      
+
+      .brand-mark img {
+        width: 110%;
+        height: 110%;
+        object-fit: contain;
+      }
+
+      .brand-name {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 19px;
+        letter-spacing: 0.3px;
+        line-height: 1.05;
+      }
+
+      .brand-name small {
+        display: block;
+        font-family: var(--font-body);
+        font-size: 10px;
+        font-weight: 500;
+        color: var(--steel-light);
+        margin-top: 4px;
+      }
+
+      /* ================= NAV ================= */
+
+      nav.main-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        flex: 1;
+      }
+
+      nav.main-nav a {
+        display: block;
+
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.1px;
+
+        padding: 10px 8px;
+        border-radius: 3px;
+
+        color: var(--off-white);
+
+        position: relative;
+
+        transition: color 0.2s ease;
+
+        white-space: nowrap;
+      }
+
+      nav.main-nav a::after {
+        content: "";
+
+        position: absolute;
+
+        left: 13px;
+        right: 13px;
+        bottom: 6px;
+
+        height: 2px;
+
+        background: var(--coral);
+
+        transform: scaleX(0);
+        transform-origin: left;
+
+        transition: transform 0.25s ease;
+      }
+
+      nav.main-nav a:hover {
+        color: var(--white);
+      }
+
+      nav.main-nav a:hover::after {
+        transform: scaleX(1);
+      }
+
+      /* ================= BUTTONS ================= */
+
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        font-weight: 700;
+        font-size: 13.5px;
+        letter-spacing: 0.4px;
+
+        padding: 12px 24px;
+
+        border-radius: 3px;
+
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease;
+
+        white-space: nowrap;
+      }
+
+      .btn-primary {
+        background: var(--coral);
+        color: #ffffff;
+
+        box-shadow: 0 5px 18px rgba(229, 57, 53, 0.18);
+      }
+
+      .btn-primary:hover {
+        background: var(--coral-dark);
+
+        box-shadow: 0 8px 28px rgba(229, 57, 53, 0.35);
+
+        transform: translateY(-2px);
+      }
+
+      .btn-primary:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .btn-outline {
+        border: 1.5px solid var(--line-strong);
+        color: var(--off-white);
+        background: transparent;
+      }
+
+      .btn-outline:hover {
+        border-color: var(--off-white);
+      }
+
+      .btn-block {
+        width: 100%;
+      }
+
+      /* ================= HAMBURGER ================= */
+
+      .hamburger {
+        display: none;
+
+        flex-direction: column;
+        gap: 5px;
+
+        padding: 8px;
+      }
+
+      .hamburger span {
+        width: 24px;
+        height: 2px;
+
+        background: var(--off-white);
+
+        transition:
+          transform 0.3s ease,
+          opacity 0.3s ease;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      /* ================= MOBILE NAV ================= */
+
+      .mobile-nav {
+        position: fixed;
+        inset: 0;
+        top: 0;
+
+        background: var(--black);
+
+        z-index: 999;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        padding: 32px;
+
+        transform: translateX(100%);
+
+        transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+      }
+
+      .mobile-nav.open {
+        transform: translateX(0);
+      }
+
+      .mobile-nav a {
+        font-family: var(--font-display);
+
+        font-size: 32px;
+        font-weight: 700;
+
+        padding: 14px 0;
+
+        border-bottom: 1px solid var(--line);
+      }
+
+      /* ================= RESPONSIVE HEADER ================= */
+
+      @media (max-width: 850px) {
+        nav.main-nav {
+          display: none;
+        }
+
+        .header-actions .btn-primary {
+          display: none;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+      }
+
+      /* ================= HERO ================= */
+      .hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 140px 0 0;
+  overflow: hidden;
+
+  /* Imagem de fundo com camada escura para destacar o texto */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+
+        background:
+          radial-gradient(
+            ellipse 90% 60% at 50% 0%,
+            rgba(229, 57, 53, 0.25),
+            transparent 60%
+          ),
+          linear-gradient(180deg, #18181b 0%, #242428 50%, #18181b 100%);
+      }
+
+      .hero-bg::before {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        background-image:
+          repeating-linear-gradient(
+            115deg,
+            rgba(244, 242, 236, 0.035) 0 1px,
+            transparent 1px 90px
+          ),
+          repeating-linear-gradient(
+            25deg,
+            rgba(244, 242, 236, 0.025) 0 1px,
+            transparent 1px 130px
+          );
+
+        opacity: 0.6;
+      }
+
+      .hero-bg .glow {
+        position: absolute;
+
+        width: 120%;
+        height: 600px;
+
+        left: -10%;
+        bottom: -260px;
+
+        background: radial-gradient(
+          ellipse closest-side,
+          rgba(229, 57, 53, 0.35),
+          transparent 70%
+        );
+
+        filter: blur(10px);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+
+        width: 100%;
+
+        padding-bottom: 64px;
+      }
+
+      .hero-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+
+        font-size: 13px;
+        font-weight: 600;
+
+        color: var(--steel-light);
+
+        margin-bottom: 26px;
+      }
+
+      .hero-tag .dot {
+        width: 7px;
+        height: 7px;
+
+        border-radius: 50%;
+
+        background: var(--coral);
+      }
+
+      h1.hero-title {
+        font-family: var(--font-display);
+
+        font-weight: 900;
+
+        font-size: clamp(52px, 9.5vw, 138px);
+
+        line-height: 0.92;
+
+        letter-spacing: -0.5px;
+
+        color: #ffffff;
+
+        max-width: 16ch;
+      }
+
+      .hero-slogan {
+        font-family: var(--font-display);
+
+        font-weight: 700;
+
+        font-size: clamp(22px, 3vw, 34px);
+
+        color: var(--coral);
+
+        margin-top: 18px;
+
+        letter-spacing: 0.5px;
+      }
+
+      .hero-sub {
+        max-width: 480px;
+
+        margin-top: 22px;
+
+        font-size: 16.5px;
+
+        color: var(--steel-light);
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 14px;
+
+        margin-top: 38px;
+
+        flex-wrap: wrap;
+      }
+
+      /* ================= SECTION ================= */
+
+      .section-pad {
+        padding: 110px 0;
+      }
+
+      .section-pad-sm {
+        padding: 80px 0;
+      }
+
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        gap: 24px;
+
+        margin-bottom: 52px;
+
+        flex-wrap: wrap;
+      }
+
+      .section-title {
+        font-family: var(--font-display);
+
+        font-weight: 800;
+
+        font-size: clamp(32px, 4.2vw, 54px);
+
+        line-height: 1.02;
+
+        letter-spacing: -0.3px;
+
+        color: #ffffff;
+      }
+
+      .section-sub {
+        color: var(--steel-light);
+
+        font-size: 15.5px;
+
+        max-width: 440px;
+
+        margin-top: 10px;
+      }
+
+      .light-bg {
+        background: var(--off-white);
+        color: var(--black);
+      }
+
+      .light-bg .section-title {
+        color: #1d1e21;
+      }
+
+      .light-bg .section-sub {
+        color: #54575e;
+      }
+
+      .light-bg .rail-divider .track {
+        background: repeating-linear-gradient(
+          90deg,
+          rgba(12, 12, 13, 0.16) 0 14px,
+          transparent 14px 26px
+        );
+      }
+
+      .reveal {
+        opacity: 0;
+
+        transform: translateY(28px);
+
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+
+      .reveal.in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ================= NEWS ================= */
+
+      .news-grid {
+        display: grid;
+
+        grid-template-columns: 1.3fr 1fr;
+
+        gap: 24px;
+      }
+
+      .news-main {
+        position: relative;
+
+        border-radius: 5px;
+
+        overflow: hidden;
+
+        min-height: 460px;
+
+        display: flex;
+        align-items: flex-end;
+
+        background: var(--black-3);
+
+        border: 1px solid var(--line);
+      }
+
+      .ph-photo {
+        position: absolute;
+        inset: 0;
+
+        background:
+          linear-gradient(200deg, rgba(227, 58, 44, 0.28), transparent 55%),
+          repeating-linear-gradient(
+            135deg,
+            rgba(244, 242, 236, 0.05) 0 2px,
+            transparent 2px 34px
+          ),
+          var(--black-3);
+      }
+
+      .ph-photo.warm {
+        background:
+          linear-gradient(200deg, rgba(227, 58, 44, 0.35), transparent 55%),
+          repeating-linear-gradient(
+            135deg,
+            rgba(244, 242, 236, 0.05) 0 2px,
+            transparent 2px 34px
+          ),
+          #241a17;
+      }
+
+      .ph-label {
+        position: absolute;
+
+        top: 16px;
+        left: 16px;
+
+        font-size: 10.5px;
+
+        letter-spacing: 0.8px;
+
+        color: rgba(244, 242, 236, 0.55);
+
+        border: 1px solid rgba(244, 242, 236, 0.22);
+
+        padding: 5px 9px;
+
+        border-radius: 3px;
+
+        background: rgba(12, 12, 13, 0.45);
+
+        backdrop-filter: blur(4px);
+      }
+
+      .news-scrim {
+        position: absolute;
+        inset: 0;
+
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.86) 0%,
+          rgba(0, 0, 0, 0.15) 55%,
+          transparent 75%
+        );
+      }
+
+      .news-content {
+        position: relative;
+        z-index: 2;
+
+        padding: 32px;
+      }
+
+      .news-cat {
+        display: inline-block;
+
+        font-size: 11px;
+        font-weight: 700;
+
+        letter-spacing: 0.6px;
+
+        background: var(--coral);
+
+        color: var(--white);
+
+        padding: 5px 11px;
+
+        border-radius: 3px;
+
+        margin-bottom: 14px;
+      }
+
+      .news-title {
+        font-family: var(--font-display);
+
+        font-weight: 800;
+
+        font-size: clamp(24px, 2.6vw, 34px);
+
+        line-height: 1.06;
+      }
+
+      .news-date {
+        margin-top: 12px;
+
+        font-size: 12.5px;
+
+        color: rgba(244, 242, 236, 0.6);
+      }
+
+      .news-side {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 24px;
+      }
+
+      .news-small {
+        display: flex;
+
+        gap: 16px;
+
+        align-items: flex-start;
+
+        padding-bottom: 24px;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+
+        transition: transform 0.25s ease;
+      }
+
+      .news-small:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .news-small:hover {
+        transform: translateX(4px);
+      }
+
+      .news-small .thumb {
+        width: 96px;
+        height: 76px;
+
+        flex-shrink: 0;
+
+        border-radius: 4px;
+
+        position: relative;
+
+        overflow: hidden;
+
+        border: 1px solid var(--line);
+      }
+
+      .news-small .info .news-cat {
+        font-size: 10px;
+
+        padding: 3px 8px;
+
+        margin-bottom: 8px;
+
+        background: transparent;
+
+        border: 1px solid var(--line-strong);
+
+        color: var(--steel-light);
+      }
+
+      .news-small .info h4 {
+        font-family: var(--font-display);
+
+        font-weight: 700;
+
+        font-size: 16.5px;
+
+        line-height: 1.15;
+      }
+
+      .news-small .info .news-date {
+        margin-top: 8px;
+      }
+
+      .news-footer {
+        margin-top: 44px;
+
+        text-align: center;
+      }
+
+      /* ================= HISTORY ================= */
+      
+      .history-wrap {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 64px;
+
+        align-items: center;
+        
+        margin: 0 auto;
+      }
+      .history-clube {
+  grid-template-columns: 1fr;
+}
+      
+      
+      .history-photo {
+        position: relative;
+
+        border-radius: 5px;
+
+        overflow: hidden;
+
+        aspect-ratio: 4/5;
+
+        border: 1px solid var(--line);
+
+        background:
+          linear-gradient(160deg, rgba(227, 58, 44, 0.22), transparent 60%),
+          repeating-linear-gradient(
+            0deg,
+            rgba(244, 242, 236, 0.05) 0 1px,
+            transparent 1px 24px
+          ),
+          #17181a;
+      }
+      .history-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.history-photo video {
+  width: 100%;
+  max-width: 700px;
+  display: block;
+}
+
+      .history-photo .yr {
+        position: absolute;
+
+        bottom: 24px;
+        left: 24px;
+
+        font-family: var(--font-display);
+
+        font-weight: 900;
+
+        font-size: 64px;
+
+        color: rgba(244, 242, 236, 0.9);
+      }
+
+      .history-text .section-title {
+        margin-bottom: 22px;
+      }
+
+      .history-text p {
+        color: #242428;
+
+        font-size: 16px;
+
+        max-width: 52ch;
+
+        margin-bottom: 28px;
+      }
+
+      .history-text p {
+  max-width: 100%;
+}
+
+
+      /* ================= TORCIDA ================= */
+
+      .fans-section {
+        position: relative;
+
+        padding: 150px 0;
+
+        text-align: center;
+
+        overflow: hidden;
+
+        background:
+          radial-gradient(
+            ellipse 80% 70% at 50% 30%,
+            rgba(229, 57, 53, 0.28),
+            transparent 65%
+          ),
+          linear-gradient(180deg, #18181b, #303036 55%, #18181b);
+      }
+
+      .fans-section::before {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        background-image: repeating-linear-gradient(
+          0deg,
+          rgba(244, 242, 236, 0.03) 0 1px,
+          transparent 1px 40px
+        );
+      }
+
+      .fans-content {
+        position: relative;
+
+        z-index: 2;
+
+        max-width: 760px;
+
+        margin: 0 auto;
+      }
+
+      .fans-title {
+        font-family: var(--font-display);
+
+        font-weight: 900;
+
+        font-size: clamp(38px, 6vw, 72px);
+
+        line-height: 1;
+      }
+
+      .fans-title .line2 {
+        color: var(--coral);
+      }
+
+      .fans-stats {
+        position: relative;
+
+        z-index: 2;
+
+        max-width: var(--container);
+
+        margin: 70px auto 0;
+
+        padding: 44px 28px 0;
+
+        display: grid;
+
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 24px;
+
+        border-top: 1px solid var(--line);
+      }
+
+      .fans-stat {
+        text-align: center;
+      }
+
+      .fans-stat .num {
+        font-family: var(--font-display);
+
+        font-weight: 800;
+
+        font-size: 38px;
+
+        color: var(--coral);
+      }
+
+      .fans-stat .lbl {
+        font-size: 12.5px;
+
+        color: var(--steel-light);
+
+        margin-top: 6px;
+      }
+
+      /* ================= SÓCIO ================= */
+
+      .plans-grid {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 22px;
+      }
+
+      .plan-card {
+        border: 1px solid var(--line);
+
+        border-radius: 6px;
+
+        padding: 38px 30px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        transition:
+          transform 0.25s ease,
+          border-color 0.25s ease;
+      }
+
+      .plan-card:hover {
+        transform: translateY(-6px);
+      }
+
+      .plan-card.featured {
+        border-color: var(--coral);
+
+        background: linear-gradient(
+          160deg,
+          rgba(227, 58, 44, 0.1),
+          transparent 60%
+        );
+
+        position: relative;
+      }
+
+      .plan-card.featured::before {
+        content: "MAIS ESCOLHIDO";
+
+        position: absolute;
+
+        top: 0;
+        right: 30px;
+
+        transform: translateY(-50%);
+
+        background: var(--coral);
+
+        color: var(--white);
+
+        font-size: 10.5px;
+
+        font-weight: 700;
+
+        letter-spacing: 0.5px;
+
+        padding: 6px 12px;
+
+        border-radius: 3px;
+      }
+
+      .plan-name {
+        font-family: var(--font-display);
+
+        font-weight: 800;
+
+        font-size: 26px;
+      }
+
+      .plan-price {
+        margin-top: 10px;
+
+        font-size: 13px;
+
+        color: var(--steel-light);
+      }
+
+      .plan-price .ph {
+        font-family: var(--font-display);
+
+        font-size: 22px;
+
+        color: var(--off-white);
+
+        font-weight: 700;
+      }
+
+      .plan-benefits {
+        margin: 26px 0 30px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        flex: 1;
+      }
+
+      .plan-benefits li {
+        font-size: 13.5px;
+
+        color: var(--steel-light);
+
+        display: flex;
+
+        gap: 10px;
+
+        align-items: flex-start;
+      }
+
+      .plan-benefits li::before {
+        content: "—";
+
+        color: var(--coral);
+
+        flex-shrink: 0;
+      }
+
+      .plan-button {
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        width: 100%;
+
+        margin-top: auto;
+
+        padding: 14px 20px;
+
+        background: var(--coral);
+
+        color: var(--white);
+
+        border: 1px solid var(--coral);
+
+        border-radius: 4px;
+
+        font-family: var(--font-display);
+
+        font-size: 14px;
+
+        font-weight: 700;
+
+        letter-spacing: 0.5px;
+
+        cursor: pointer;
+
+        text-decoration: none;
+
+        transition:
+          transform 0.25s ease,
+          background 0.25s ease,
+          border-color 0.25s ease;
+      }
+
+      .plan-button:hover {
+        transform: translateY(-3px);
+
+        background: transparent;
+
+        color: var(--coral);
+
+        border-color: var(--coral);
+      }
+
+      /* ================= SEDE ================= */
+
+      .venue-wrap {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 64px;
+
+        align-items: center;
+      }
+
+      .venue-photo {
+        position: relative;
+
+        border-radius: 5px;
+
+        overflow: hidden;
+
+        aspect-ratio: 4/3;
+
+        border: 1px solid var(--line);
+
+        background:
+          linear-gradient(160deg, rgba(227, 58, 44, 0.2), transparent 60%),
+          repeating-linear-gradient(
+            90deg,
+            rgba(244, 242, 236, 0.04) 0 1px,
+            transparent 1px 22px
+          ),
+          #17181a;
+      }
+      .venue-photo video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Recorta suavemente para preencher a caixa inteira */
+  display: block;
+}
+
+      .venue-facts {
+        margin-top: 26px;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 18px;
+      }
+
+      .venue-facts div .k {
+        font-size: 11px;
+
+        letter-spacing: 0.6px;
+
+        text-transform: uppercase;
+
+        color: var(--steel-light);
+      }
+
+      .venue-facts div .v {
+        font-weight: 700;
+
+        font-size: 15px;
+
+        margin-top: 5px;
+      }
+
+      /* Organiza a galeria em 4 colunas iguais com espaçamento */
+.gallery-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+  width: 100%;
+}
+
+/* Mantém cada item do mesmo tamanho e com cantos arredondados */
+.gallery-strip .g-item {
+  width: 100%;
+  height: 200px; /* Ajuste a altura desejada para os cartões */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* Faz a imagem preencher o espaço mantendo a proporção correta */
+.gallery-strip .g-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Recorta a imagem suavemente sem esticar */
+  display: block;
+}
+
+/* Garante responsividade para telas menores (celulares e tablets) */
+@media (max-width: 768px) {
+  .gallery-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+      /* ================= REDES ================= */
+
+      .social-grid {
+        display: grid;
+
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 18px;
+
+        margin-bottom: 44px;
+      }
+
+      .social-btn {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 10px;
+
+        border: 1px solid var(--line-strong);
+
+        border-radius: 5px;
+
+        padding: 18px;
+
+        font-weight: 600;
+
+        font-size: 14px;
+
+        transition:
+          border-color 0.2s ease,
+          background 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .social-btn:hover {
+        border-color: var(--coral);
+
+        background: rgba(227, 58, 44, 0.08);
+
+        transform: translateY(-3px);
+      }
+
+      .feed-grid {
+        display: grid;
+
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 16px;
+      }
+
+      .feed-item {
+        aspect-ratio: 1/1;
+
+        border-radius: 4px;
+
+        border: 1px solid var(--line);
+
+        position: relative;
+
+        overflow: hidden;
+
+        background: #1d1e21;
+
+        transition: transform 0.25s ease;
+      }
+
+      .feed-item img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        display: block;
+      }
+
+      .feed-item:hover {
+        transform: scale(1.03);
+      }
+
+      /* ================= TRANSPARÊNCIA ================= */
+
+      #programas .history-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      #programas .history-text {
+        max-width: 100%;
+      }
+
+      #programas .history-text p {
+        max-width: 100%;
+      }
+
+      #programas .history-text a {
+        color: var(--coral-dark);
+
+        text-decoration: underline;
+
+        text-decoration-thickness: 1px;
+
+        text-underline-offset: 3px;
+      }
+
+      #programas .history-text a:hover {
+        color: var(--coral);
+      }
+
+      /* ================= CONTATO ================= */
+
+      .contact-wrap {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 64px;
+      }
+
+      .field {
+        margin-bottom: 20px;
+      }
+
+      .field label {
+        display: block;
+
+        font-size: 12.5px;
+
+        font-weight: 600;
+
+        margin-bottom: 8px;
+
+        letter-spacing: 0.3px;
+      }
+
+      .field input,
+      .field textarea {
+        width: 100%;
+
+        background: var(--black-2);
+
+        border: 1px solid var(--line-strong);
+
+        border-radius: 4px;
+
+        padding: 14px 16px;
+
+        color: var(--off-white);
+
+        font-size: 14.5px;
+
+        transition: border-color 0.2s ease;
+      }
+
+      .field input::placeholder,
+      .field textarea::placeholder {
+        color: #77777d;
+      }
+
+      .field input:focus,
+      .field textarea:focus {
+        border-color: var(--coral);
+
+        outline: none;
+      }
+
+      .field textarea {
+        resize: vertical;
+
+        min-height: 130px;
+      }
+
+      .contact-info {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 26px;
+      }
+
+      .ci-item .k {
+        font-size: 11px;
+
+        letter-spacing: 0.6px;
+
+        text-transform: uppercase;
+
+        color: var(--steel-light);
+      }
+
+      .ci-item .v {
+        font-weight: 600;
+
+        font-size: 16px;
+
+        margin-top: 6px;
+      }
+
+      /* ================= MAPA ================= */
+
+      .map-ph {
+        margin-top: 10px;
+
+        width: 100%;
+
+        aspect-ratio: 16/9;
+
+        min-height: 300px;
+
+        border-radius: 5px;
+
+        border: 1px solid var(--line);
+
+        overflow: hidden;
+
+        background: #17181a;
+      }
+
+      .map-ph iframe {
+        width: 100%;
+
+        height: 100%;
+
+        border: 0;
+
+        display: block;
+      }
+
+      /* ================= FORM NOTE ================= */
+
+      .form-note {
+        font-size: 12px;
+
+        color: var(--steel-light);
+
+        margin-top: 14px;
+
+        min-height: 20px;
+      }
+
+      .form-note.success {
+        color: #55c878;
+      }
+
+      .form-note.error {
+        color: #ff6b6b;
+      }
+
+      /* ================= FOOTER ================= */
+
+      footer {
+        background: #242428;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+        padding: 80px 0 32px;
+      }
+
+      .footer-top {
+        display: grid;
+
+        grid-template-columns: 1.4fr 1fr 1fr 1fr;
+
+        gap: 48px;
+
+        padding-bottom: 56px;
+      }
+
+      .footer-brand .brand {
+        margin-bottom: 18px;
+      }
+
+      .footer-brand p {
+        color: var(--steel-light);
+
+        font-size: 14px;
+
+        max-width: 280px;
+      }
+
+      .footer-col h5 {
+        font-family: var(--font-display);
+
+        font-weight: 700;
+
+        font-size: 15px;
+
+        margin-bottom: 18px;
+      }
+
+      .footer-col a {
+        display: block;
+
+        color: var(--steel-light);
+
+        font-size: 14px;
+
+        margin-bottom: 12px;
+
+        transition: color 0.2s ease;
+      }
+
+      .footer-col a:hover {
+        color: var(--off-white);
+      }
+
+      .footer-social {
+        display: flex;
+
+        gap: 12px;
+
+        margin-top: 20px;
+      }
+
+      .footer-social a {
+        width: 36px;
+        height: 36px;
+
+        border-radius: 50%;
+
+        border: 1px solid var(--line-strong);
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        font-size: 13px;
+
+        transition:
+          border-color 0.2s ease,
+          background 0.2s ease;
+      }
+
+      .footer-social a:hover {
+        border-color: var(--coral);
+
+        background: rgba(227, 58, 44, 0.12);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid var(--line);
+
+        padding-top: 28px;
+
+        display: flex;
+
+        justify-content: space-between;
+
+        flex-wrap: wrap;
+
+        gap: 14px;
+
+        font-size: 12.5px;
+
+        color: var(--steel-light);
+      }
+
+      /* ================= RESPONSIVE ================= */
+
+      @media (max-width: 900px) {
+        .news-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .titles-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .plans-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .social-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .feed-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 860px) {
+        .history-wrap {
+          grid-template-columns: 1fr;
+
+          gap: 36px;
+        }
+
+        .venue-wrap {
+          grid-template-columns: 1fr;
+
+          gap: 36px;
+        }
+
+        .gallery-strip {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .contact-wrap {
+          grid-template-columns: 1fr;
+
+          gap: 40px;
+        }
+
+        .footer-top {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .fans-stats {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 540px) {
+        .titles-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-top {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =========================================================
+     HEADER
+========================================================= -->
+
+    <header class="site-header" id="siteHeader">
+      <div class="container header-inner">
+        <a href="#inicio" class="brand">
+          <div class="brand-mark">
+            <img
+              src="logo aafac.png"
+              alt="Logo do Ferroviário Atlético Clube"
+            />
+          </div>
+
+          <div class="brand-name">AAFAC</div>
+        </a>
+
+        <nav class="main-nav">
+          <a href="#inicio">Início</a>
+
+          <a href="#quemsomos">Quem somos</a>
+
+          <a href="#noticias">Notícias</a>
+
+          
+
+          
+
+          <a href="#socio">Sócio Coral</a>
+
+          <a href="#programas">Transparência</a>
+          <a href="#clube">Estatuto</a>
+          <a href="#contato">Contato</a>
+        
+        </nav>
+
+        <div class="header-actions">
+          <button
+            class="hamburger"
+            id="hamburgerBtn"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- =========================================================
+     MENU MOBILE
+========================================================= -->
+
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#inicio">Início</a>
+
+      <a href="#quemsomos">Quem somos</a>
+
+      <a href="#noticias">Notícias</a>
+
+      
+
+      
+
+      <a href="#socio">Sócio Coral</a>
+      <a href="#clube">Estatuto</a>
+      <a href="#programas">Transparência</a>
+      <a href="#contato">Contato</a>
+    </div>
+
+    <!-- =========================================================
+     HERO
+========================================================= -->
+
+    <section class="hero" id="inicio" style="background-image: url('./aafacmelhorda2.jpg'); background-size: cover;"
+  
+      <div class="hero-bg">
+        <div class="glow"></div>
+      </div>
+
+      <div class="container hero-content">
+        
+        <div class="hero-tag">
+          <span class="dot"></span>
+
+          Fortaleza · Ceará · Fundada em 2001
+        </div>
+
+        <h1 class="hero-title">
+          Associação dos amigos do Ferroviário Atlético Clube
+        </h1>
+
+        <div class="hero-slogan">Tradição. Raça. Paixão.</div>
+
+        <p class="hero-sub">Desde 1933, carregando a força da nação coral.</p>
+
+        <div class="hero-actions">
+          <a href="#noticias" class="btn btn-primary"> Confira as Notícias </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+     QUEM SOMOS
+========================================================= -->
+
+    <section class="section-pad light-bg" id="quemsomos">
+      <div class="container">
+        <div class="history-wrap">
+          <div class="history-photo reveal">
+  <video controls autoplay loop playsinline>
+    <source src="VIDEO FERROVIARIO vertical.mp4" type="video/mp4">
+    
+  </video>
+</div>
+          
+
+          <div class="history-text reveal">
+            <h2 class="section-title">Quem somos</h2>
+
+            <p>
+              Fundada em 2001 e com raízes na Barra do Ceará, a  <strong> Associação dos Amigos do Ferroviário Atlético Clube (AAFAC)</strong>  é uma entidade sem fins lucrativos que atua como o pilar social, cultural, educacional e esportivo do clube. A instituição transforma a paixão pelo esporte em cidadania e desenvolvimento humano para crianças, jovens e famílias no Ceará, executando projetos de esporte educacional, formação de base e impacto social por meio da gestão responsável de recursos públicos e privados.
+            </p>
+            <h2 class="section-title">MISSÃO</h2>
+            <p><strong>Nossa missão centra-se em utilizar o esporte, a educação e a cultura para promover o desenvolvimento humano, a inclusão social e a cidadania. A iniciativa busca transformar a realidade de crianças, jovens e comunidades vulneráveis no Ceará, mantendo o compromisso de preservar a história e os valores do Ferroviário Atlético Clube.</strong></p>
+            <h2 class="section-title">VISÃO</h2>
+            <p><strong>"Ser reconhecida como uma associação de referência no Terceiro Setor e no esporte educacional e formativo no Nordeste, destacando-se pela excelência em governança, transparência, capacidade de captação e impacto social mensurável até 2030."</strong></p>
+            <h2 class="section-title">VALORES</h2>
+            <p><strong>Inclusão Social:</strong>Acreditamos no esporte como direito de todos e ferramenta fundamental de transformação, combate à vulnerabilidade, promoção da saúde e garantia de cidadania.</p>
+            <p><strong>Transparência e Ética:</strong>Gestão responsável e prestação de contas rigorosa no uso de recursos públicos e privados.</p>
+            <p><strong>Identidade e Tradição:</strong>Valorização do patrimônio, da história operária e da união com a torcida do Ferroviário Atlético Clube.</p>
+            <p><strong>Formação Integral:</strong>Foco no desenvolvimento cidadão, aliando a prática esportiva ao respeito, disciplina e desempenho escolar.</p>
+            <p><strong>Parcerias Estratégicas:</strong>Construção de alianças sustentáveis para expandir e garantir a continuidade do impacto social.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+     NOTÍCIAS
+========================================================= -->
+
+    <section class="section-pad" id="noticias">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2 class="section-title">Nação Coral</h2>
+
+            <p class="section-sub">
+              Fique por dentro de tudo que acontece no Ferrão.
+            </p>
+          </div>
+        </div>
+
+        <div class="news-grid reveal">
+          <a href="#" class="news-main">
+            <div class="ph-photo warm"></div>
+
+            <span class="ph-label"> imagem: substituir por foto oficial </span>
+
+            <div class="news-scrim"></div>
+
+            <div class="news-content">
+              <span class="news-cat"> Futebol Profissional </span>
+
+              <h3 class="news-title">
+                [Placeholder] Título da notícia em destaque sobre o elenco coral
+              </h3>
+
+              <p class="news-date">--/--/---- · Redação FAC</p>
+            </div>
+          </a>
+
+          <div class="news-side">
+            <a href="#" class="news-small">
+              <div class="thumb">
+                <div class="ph-photo"></div>
+              </div>
+
+              <div class="info">
+                <span class="news-cat"> Categorias de Base </span>
+
+                <h4>[Placeholder] Notícia sobre as categorias de base</h4>
+
+                <p class="news-date">--/--/----</p>
+              </div>
+            </a>
+
+            <a href="#" class="news-small">
+              <div class="thumb">
+                <div class="ph-photo"></div>
+              </div>
+
+              <div class="info">
+                <span class="news-cat"> Clube </span>
+
+                <h4>[Placeholder] Comunicado oficial do clube</h4>
+
+                <p class="news-date">--/--/----</p>
+              </div>
+            </a>
+
+            <a href="#" class="news-small">
+              <div class="thumb">
+                <div class="ph-photo"></div>
+              </div>
+
+              <div class="info">
+                <span class="news-cat"> Torcida </span>
+
+                <h4>[Placeholder] Cobertura sobre a torcida coral</h4>
+
+                <p class="news-date">--/--/----</p>
+              </div>
+            </a>
+
+            <a href="#" class="news-small">
+              <div class="thumb">
+                <div class="ph-photo"></div>
+              </div>
+
+              <div class="info">
+                <span class="news-cat"> Bastidores </span>
+
+                <h4>[Placeholder] Bastidores do CT e da diretoria</h4>
+
+                <p class="news-date">--/--/----</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="news-footer reveal">
+          <a href="#" class="btn btn-outline"> Ver todas as notícias </a>
+        </div>
+      </div>
+    </section>
+
+
+    
+
+    <!-- =========================================================
+
+    <!-- =========================================================
+     TORCIDA
+========================================================= -->
+
+    <section class="fans-section" id="torcida">
+      <div class="fans-content">
+        <h2 class="fans-title">
+          UMA PAIXÃO QUE NÃO SE EXPLICA.
+
+          <br />
+
+          <span class="line2"> SE VIVE. </span>
+        </h2>
+      </div>
+
+      <div class="fans-stats">
+        <div class="fans-stat">
+          <div class="num">1933</div>
+
+          <div class="lbl">História</div>
+        </div>
+
+        <div class="fans-stat">
+          <div class="num">100%</div>
+
+          <div class="lbl">Torcida coral</div>
+        </div>
+
+        <div class="fans-stat">
+          <div class="num">15</div>
+
+          <div class="lbl">Conquistas oficiais</div>
+        </div>
+
+        <div class="fans-stat">
+          <div class="num">90+</div>
+
+          <div class="lbl">Anos de tradição</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+     SÓCIO CORAL
+========================================================= -->
+
+    <section class="section-pad" id="socio">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2 class="section-title">Faça parte do futuro do Ferrão</h2>
+
+            <p class="section-sub">
+              Ser Sócio Coral é ajudar o Ferroviário a continuar crescendo
+              dentro e fora de campo.
+            </p>
+          </div>
+        </div>
+
+        <div class="plans-grid reveal">
+          <div class="plan-card">
+            <div class="plan-name">Campeão Cearense</div>
+
+            <div class="plan-price"><span class="ph">10,00</span> /mês</div>
+
+            <ul class="plan-benefits">
+              <li>
+                Plano popular, com preço que cabe em qualquer bolso. Ideal para
+                quem não vai aos jogos com frequência, mas quer estar sempre
+                próximo do Ferroviário.
+              </li>
+
+              <li>5%OFF na Loja do Ferroviário</li>
+              <li>Participação em sorteios</li>
+              <li>Acesso à Rede de Parcerias</li>
+              <li>Direitos estatutários em eleições</li>
+              <li>Kit de boas-vindas com carteirinha e certificado oficial</li>
+            </ul>
+
+            <button
+              class="plan-button"
+              onclick="
+                window.location.href =
+                  'https://www.sociocoral.com.br/users/sign_in'
+              "
+            >
+              Seja Sócio
+            </button>
+          </div>
+
+          <div class="plan-card featured">
+            <div class="plan-name">Campeão dos Campeões</div>
+
+            <div class="plan-price"><span class="ph">60,00</span> /mês</div>
+
+            <ul class="plan-benefits">
+              <li>
+                Plano com o melhor custo-benefício, para quem não perde jogos do
+                Ferrão.
+              </li>
+
+              <li>Acesso ARQUIBANCADA</li>
+              <li>10%OFF na Loja do Ferroviário</li>
+              <li>Inclusão de até 3 dependentes</li>
+              <li>Participação em sorteios</li>
+              <li>Acesso à Rede de Parcerias</li>
+              <li>Direitos estatutários em eleições</li>
+              <li>Kit de boas-vindas com carteirinha e certificado oficial</li>
+            </ul>
+
+            <button
+              class="plan-button"
+              onclick="
+                window.location.href =
+                  'https://www.sociocoral.com.br/users/sign_in'
+              "
+            >
+              Seja Sócio
+            </button>
+          </div>
+
+          <div class="plan-card">
+            <div class="plan-name">Campeão Brasileiro</div>
+
+            <div class="plan-price"><span class="ph">80,00</span> /mês</div>
+
+            <ul class="plan-benefits">
+              <li>
+                Plano mais completo, para quem gosta de exclusividade e
+                comodidade.
+              </li>
+
+              <li>Acesso ARQUIBANCADA e CADEIRA</li>
+              <li>15%OFF na Loja do Ferroviário</li>
+              <li>Inclusão de até 5 dependentes</li>
+              <li>Participação em sorteios</li>
+              <li>Acesso à Rede de Parcerias</li>
+              <li>Direitos estatutários em eleições</li>
+              <li>Kit de boas-vindas com carteirinha e certificado oficial</li>
+            </ul>
+
+            <button
+              class="plan-button"
+              onclick="
+                window.location.href =
+                  'https://www.sociocoral.com.br/users/sign_in'
+              "
+            >
+              Seja Sócio
+            </button>
+          </div>
+
+          <div class="plan-card">
+            <div class="plan-name">D'Gratis</div>
+
+            <div class="plan-price"><span class="ph">0,00</span> /mês</div>
+
+            <ul class="plan-benefits">
+              <li>Plano GRATUITO de Sócio-torcedor do Ferroviário.</li>
+
+              <li>5%OFF na Loja do Ferroviário</li>
+              <li>Sem inclusão de dependentes</li>
+              <li>Sem Participação em sorteios</li>
+              <li>Acesso à Rede de Parcerias</li>
+              <li>Carteirinha Virtual</li>
+              <li>
+                Permissão de 3 checkins por temporada (Definidos pelo clube).
+              </li>
+            </ul>
+
+            <button
+              class="plan-button"
+              onclick="
+                window.location.href =
+                  'https://www.sociocoral.com.br/users/sign_in'
+              "
+            >
+              Seja Sócio
+            </button>
+          </div>
+
+          <div class="plan-card">
+            <div class="plan-name">Sereia</div>
+
+            <div class="plan-price"><span class="ph">70,00</span> /mês</div>
+
+            <ul class="plan-benefits">
+              <li>
+                Plano exclusivo para as mulheres corais, com todos os principais
+                benefícios do programa de sócio-torcedor.
+              </li>
+
+              <li>Acesso ARQUIBANCADA e CADEIRA</li>
+              <li>15%OFF na Loja do Ferroviário</li>
+              <li>Inclusão de até 5 dependentes</li>
+              <li>Participação em sorteios</li>
+              <li>Acesso à Rede de Parcerias</li>
+              <li>Direitos estatutários em eleições</li>
+              <li>Kit de boas-vindas com carteirinha e certificado oficial</li>
+            </ul>
+
+            <button
+              class="plan-button"
+              onclick="
+                window.location.href =
+                  'https://www.sociocoral.com.br/users/sign_in'
+              "
+            >
+              Seja Sócio
+            </button>
+          </div>
+
+          <div class="plan-card">
+            <div class="plan-name">Tutubinha</div>
+
+            <div class="plan-price"><span class="ph">0,00</span> /mês</div>
+
+            <ul class="plan-benefits">
+              <li>
+                Plano GRATUITO, exclusivo para crianças de até 12 anos. Os
+                pequenos torcedores fidelizados com o Ferrão.
+              </li>
+
+              <li>5%OFF na Loja do Ferroviário</li>
+              <li>Sem inclusão de dependentes</li>
+              <li>Acesso à Rede de Parcerias</li>
+              <li>Carteirinha Virtual</li>
+
+              <li>
+                Para acesso gratuito ao estádio, em jogos cujo mando de campo
+                sejam do Ferroviário, a criança deve estar acompanhada do
+                responsável e se apresentar diretamente nas catracas, portando
+                um documento de identificação oficial.
+              </li>
+            </ul>
+
+            <button
+              class="plan-button"
+              onclick="
+                window.location.href =
+                  'https://www.sociocoral.com.br/users/sign_in'
+              "
+            >
+              Seja Sócio
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="rail-divider reveal">
+        <span class="rivet"></span>
+
+        <span class="track"></span>
+
+        <span class="rivet"></span>
+      </div>
+    </div>
+
+    <!-- =========================================================
+     SEDE
+========================================================= -->
+
+    <section class="section-pad light-bg" id="sede">
+      <div class="container">
+        <div class="venue-wrap">
+          <div class="history-text reveal">
+            <h2 class="section-title">Nossa Casa</h2>
+
+            <p class="section-sub" style="margin-top: 14px">
+              Vila Olímpica Elzir Cabral
+            </p>
+
+            <div class="venue-facts">
+              <div>
+                <span class="k"> Localização </span>
+
+                <div class="v">R. Filó, 650 - Barra do Ceará, Fortaleza - CE, 60330-060.</div>
+              </div>
+
+              <div>
+                <span class="k"> Capacidade </span>
+
+                <div class="v">4.200</div>
+              </div>
+
+              <div>
+                <span class="k"> Estrutura </span>
+
+                <div class="v">A Vila Olímpica Elzir Cabral possui uma estrutura completa para treinamentos, jogos oficiais de pequeno e médio porte e atividades socioesportivas da AAFAC e do Ferroviário Atlético Clube</div>
+              </div>
+
+              <div>
+                <span class="k"> História </span>
+
+                <div class="v">Casa histórica do Ferroviário</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="venue-photo reveal">
+            <video controls autoplay muted loop playsinline>
+    <source src="WhatsApp Video 2026-07-22 at 20.05.14.mp4" type="video/mp4">
+    
+  </video></div>
+        </div>
+
+        <div class="gallery-strip reveal">
+          <div class="g-item"><img src="imgaafac2.jpeg" alt="casa dos Craques"></div>
+          <div class="g-item"><img src="imgaafac.jpeg" alt="casa dos Craques"></div>
+          <div class="g-item"><img src="WhatsApp Image 2026-07-22 at 20.04.38.jpeg" alt="casa dos Craques"></div>
+          <div class="g-item"><img src="WhatsApp Image 2026-07-22 at 20.04.39 (2).jpeg" alt="casa dos Craques"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+     REDES SOCIAIS
+========================================================= -->
+
+    <section class="section-pad-sm" id="redes">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2 class="section-title">Siga a AAFAC</h2>
+          </div>
+        </div>
+
+        <div class="social-grid reveal">
+          <a
+            href="https://www.instagram.com/aafac1933/"
+            class="social-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+
+          <a href="#" class="social-btn"> Facebook </a>
+
+          <a href="#" class="social-btn"> YouTube </a>
+
+          <a href="#" class="social-btn"> TikTok </a>
+        </div>
+
+        <div class="feed-grid reveal">
+          <div class="feed-item">
+            <img src="logo insta.webp" alt="Instagram da AAFAC" />
+          </div>
+
+          <div class="feed-item">
+            <img
+              src="free-facebook-icon-svg-download-png-432507.webp"
+              alt="Facebook da AAFAC"
+            />
+          </div>
+
+          <div class="feed-item">
+            <img
+              src="youtube-logo-youtube-social-media-icon-free-png.webp"
+              alt="YouTube da AAFAC"
+            />
+          </div>
+
+          <div class="feed-item">
+            <img
+              src="tiktok-logo-tiktok-logo-transparent-tiktok-icon-transparent-free-free-png.webp"
+              alt="TikTok da AAFAC"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+     TRANSPARÊNCIA
+========================================================= -->
+
+    <section class="section-pad light-bg" id="programas">
+      <div class="container">
+        <div class="history-wrap">
+          <div class="history-text reveal">
+            <h2 class="section-title">Transparência</h2>
+
+            <p>
+              <strong>
+                AAFAC – Associação Amigos do Ferroviário Atlético Clube divulga
+                Termos de Fomento firmados entre 2020 e 2026
+              </strong>
+            </p>
+
+            <p>
+              A Associação Amigos do Ferroviário Atlético Clube (AAFAC) divulgou
+              os <strong>Termos de Fomento</strong> firmados com a União, por
+              meio do Ministério do Esporte, entre os anos de 2020 e 2026. Os
+              recursos, oriundos de Emendas Parlamentares, foram destinados ao
+              Projeto Casa de Craque – O futuro que transforma, que atende
+              crianças e adolescentes dos municípios
+              <strong>
+                Fortaleza, Beberibe, Barbalha, Baturité, Guaramiranga e
+                Quixeramobim </strong
+              >, na modalidade futebol de campo, reforçando a transparência e o
+              compromisso social da entidade.
+            </p>
+
+            <p>
+              <strong>Meta:</strong>
+              Publicizar os Termos de Fomento firmados com o Ministério dos
+              Esportes entre os anos de 2020 e 2026, com recursos destinados ao
+              Projeto Casa de Craque – O futuro que transforma.
+            </p>
+
+            <p>
+              A Associação Amigos Ferroviário Atlético Clube (AAFAC) torna
+              público os Termos de Fomento firmados com a União, por meio do
+              Ministério dos Esportes, referente ao período compreendido entre
+              os anos de 2020 e 2026.
+            </p>
+
+            <p>
+              Os recursos recebidos foram direcionados para a execução do
+              <strong>Projeto Casa de Craque</strong> – O futuro que transforma,
+              iniciativa que tem como objetivo promover o desenvolvimento
+              social, educacional e esportivo de crianças e adolescentes dos
+              municípios de Fortaleza, Beberibe, Barbalha, Baturité,
+              Guaramiranga e Quixeramobim.
+            </p>
+
+            <p>
+              O projeto contempla modalidade esportiva futebol de campo,
+              oferecendo atividades regulares que incentivam hábitos saudáveis,
+              disciplina, convivência social e a formação cidadã dos
+              participantes.
+            </p>
+
+            <p>
+              Para a AAFAC, a divulgação dos Termos de Fomento reforça o
+              compromisso da entidade com a transparência, a legalidade e a
+              correta aplicação dos recursos públicos.
+            </p>
+
+            <p>
+              A associação destaca, ainda, que as ações desenvolvidas ao longo
+              dos anos têm contribuído diretamente para a inclusão social de
+              jovens em situação de vulnerabilidade, fortalecendo o esporte como
+              ferramenta de transformação social.
+            </p>
+
+            <p>
+              <strong>
+                AVISO DE COTAÇÃO PRÉVIA DE PREÇOS EDITAL Nº 001/2026.
+              </strong>
+            </p>
+
+            <p>
+              Edital simplificado de cotação prévia de preços n. 001/2026, Termo
+              de Fomento 976518/2025.
+
+              <br /><br />
+
+              Critério de Julgamento: menor preço.
+
+              <br />
+
+              Base Legal: Lei n° 13.019/2014 e Decreto nº 8.726, de 27 de abril
+              de 2016.
+
+              <br /><br />
+
+              Objeto: AQUISIÇÃO DE MATERIAIS ESPORTIVOS, UNIFORMES E CONTRATAÇÃO
+              DE PROFISSIONAIS PARA IMPLEMENTAÇÃO E DESENVOLVIMENTO DO PROJETO
+              CASA DE CRAQUES – O FUTURO QUE TRANSFORMA, NO ESTADO DO CEARÁ.
+
+              <br /><br />
+
+              Data de envio das propostas: 25/02/2026 a 04/03/2026.
+
+              <br />
+
+              Data de classificação e resultado: 05/03/2026.
+
+              <br /><br />
+
+              Edital na íntegra disponível no site do Ferroviário ou na sede da
+              Associação, localizada à Rua Dona Filó, 650, Sala 01 – Barra do
+              Ceará – CE, CEP: 60.330-060.
+            </p>
+
+            <h2 class="section-title">LINKS</h2>
+
+            <p>
+              <strong>
+                <a
+                  href="https://www.ferroviario.com.br/wp-content/uploads/2026/01/Transparencia-Termos-de-Fomento-firmados-entre-2020-e-2026-1.xlsx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Transparencia Termos de Fomento firmados entre 2020 e 2026 (1)
+                </a>
+              </strong>
+            </p>
+
+            <p>
+              <strong>
+                <a
+                  href="https://www.ferroviario.com.br/wp-content/uploads/2026/01/Print-Transpare%CC%82ncia-Site-1.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ministério da Gestão e Inovação em Serviços Públicos
+                </a>
+              </strong>
+            </p>
+
+            <p>
+              <strong>
+                <a
+                  href="https://www.ferroviario.com.br/wp-content/uploads/2026/03/Extrato-Aviso-de-Cotação-Prévia-de-Preços-Edital-N.º-0012026.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Extrato Aviso de Cotação Prévia de Preços Edital N.º 0012026
+                </a>
+              </strong>
+            </p>
+
+            <p>
+              <strong>
+                <a
+                  href="https://www.ferroviario.com.br/wp-content/uploads/2026/03/Edital-de-Cotação-Prévia-de-Preço-N.º-0012026.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Edital de Cotação Prévia de Preço N.º 0012026
+                </a>
+              </strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+        <!-- =========================================================
+      ESTATUTO
+========================================================= -->
+
+    <section class="section-pad light-bg" id="clube">
+      <div class="container">
+        <div class="history-clube">
+          
+
+          <div class="history-text reveal">
+            <h2 class="section-title">Estatuto</h2>
+
+            <center><H3><STRong>ESTATUTO DA ASSOCIAÇÃO DOS AMIGOS DO FERROVIÁRIO ATLÉTICO CLUBE </STRong></H3></center>
+            <center><p></p><STRong>CAPÍTULO I </STRong></P></center>
+            <center><p><strong>DA CONSTITUIÇÃO, DENOMINAÇÃO, SEDE, FORO E DURAÇÃO </strong></p></center>
+            <p>Art. 1º - Pelo presente estatuto e pelas disposições legais aplicáveis à espécie, fica constituída a Associação dos Amigos do Ferroviário Atlético Clube, com sede e foro jurídico à Rua Filo, Nº 650, sala 01, Barra do Ceará, nesta Capital. </p>
+            <p>Art. 2º - A Associação será por tempo indeterminado, com término do exercício social no dia 31 de dezembro de cada ano civil. </p>
+
+            <center><p><strong>CAPÍTULO II </strong></p></center>
+            <center><p><strong>DOS FINS E OBJETIVOS </strong></p></center>
+            <p>Art. 3º - A Associação constituir-se-á e possuirá caráter de Sociedade Civil de Direito Privado, sem fins lucrativos, políticos ou religiosos, e, terá por finalidade, congregar os membros da família coral, e estimulá-los a desenvolverem esforços, com o objetivo de proporcionar uma alternativa de colaboração financeira, patrimonial, desportiva, social e cultural ao Ferroviário Atlético Clube. </p>
+            
+            <center><p><strong>CAPÍTULO III </strong></p></center>
+            <center><p><strong>DOS SÓCIOS – DIREITOS E DEVERES</strong></p></center>
+            <p>Art. 4º - O quadro social da entidade será integrado por admiradores do Ferroviário Atlético Clube, e será composto pelas seguintes categorias de sócios: <br> a) efetivos. <br> b) beneméritos.</p>
+            <p>§1º - São sócios efetivos da Associação, todos os membros que, espontaneamente, optarem por se associar.</p>
+            <p>§2º - Por decisão unânime da Diretoria, pode ser concedido o título de sócio benemérito às pessoas que tenham de alguma forma, ajudado ou prestado relevantes serviços ao Ferroviário Atlético Clube. </p>
+            <p>Art. 5º - São direitos dos associados:<br> a) tomar parte nas Assembleias, discutir e votar os assuntos nela tratados; <br> b) propor à Diretoria ou a Assembleia Geral as medidas que julgarem úteis ou convenientes ao objetivo social; <br> c) votar e ser votado para qualquer cargo eletivo da associação, respeitadas as disposições estatutárias; <br> d) convocar, desde que seja solicitada por no mínimo 1/3 (um terço) dos associados, Assembleias Gerais ordinárias e extraordinárias; <br> e) fazer denúncias e oferecer sugestões sobre questões de interesse da entidade e seus associados; <br> f) recorrer aos órgãos superiores da associação, em casos de atos gerais, deles emanados, que impliquem em prejuízo aos direitos dos associados; <br> g) receber a carteira social. <br> Parágrafo Único – Os Sócios Beneméritos poderão participar das Assembleias, sem direito a voto.  </p>
+            <p>Art. 6º - São deveres dos associados:<br> a) cumprir e respeitar o Estatuto Social, o Regulamento Interno e as deliberações que forem tomadas pela Assembleia Geral;<br> b) respeitar e acatar todas as instruções emanadas dos Órgãos de Administração; <br>c) desempenhar os cargos que lhe forem atribuídos pela Assembleia Geral ou pela Diretoria; <br>d) contribuir para os cofres da associação com o valor fixado pelo Estatuto; <br>e) trabalhar pelos objetivos da Entidade;<br> f) zelar pelo bom nome da Associação;  </p>
+            <p>Art. 7º - O associado que infringir qualquer das disposições estatutárias ou regulamentares, bem como, as instruções emanadas dos Órgãos de administração da Associação, ficará sujeito à penalidade de eliminação do quadro social da entidade. </p>
+
+            <center><p><strong>CAPÍTULO V <br>SEÇÃO I </strong></p></center>
+            <center><p><strong>DA ASSEMBLEIA GERAL  </strong></p></center>
+            <p>Art. 11 – A Assembleia Geral é a reunião dos associados convocada e instalada na forma deste Estatuto, para deliberar sobre matéria de interesse social, com poderes para resolução de todos os assuntos de interesse da Associação.<br> Parágrafo Único – É da competência privativa da Assembleia Geral: <br>a) eleger, e se for o caso, destituir os membros da Diretoria e do Conselho Fiscal;<br> b) tomar anualmente as contas da Diretoria e deliberar a respeito; <br>c) discutir para fins de aprovação ou recusa, o parecer do Conselho Fiscal;<br> d) suspender o exercício dos direitos do sócio;<br> e) emendar ou reformar o Estatuto pelo voto de 2/3 (dois terços) dos associados; <br>f) deliberar sobre qualquer outra matéria de interesse da Associação. </p>
+            <p>Art. 12 – As convocações de Assembleia Geral serão feitas pelo Presidente da entidade por meio de editais afixados nos quadros de avisos da sede da associação, com 08 (oito) dias de antecedência, mencionando, ainda que sumariamente, a ordem do dia, local, dia e hora da reunião. </p>
+            <p>§1º - A Assembleia Geral reunir-se-á, ordinariamente, 01 (uma) vez por ano, ou extraordinariamente, tantas vezes quantas necessárias. </p>
+            <p>§2º - Poderá a Assembleia Geral também ser convocada:
+<br>a) pela Diretoria e pelo Conselho Fiscal, nos casos previstos neste Estatuto;
+<br>b) por 1/3 (um terço) dos associados em pleno gozo dos direitos sociais, quando a
+Diretoria não atender no prazo de oito (8) dias, contados da apresentação do
+requerimento. 
+</p>
+            <p>Art. 13 – A Assembleia Geral instalar-se-á em primeira convocação, com aviso
+prévio no mínimo de oito (8) dias, e presença de mais da metade dos sócios em
+condições de voto, e em segunda convocação com qualquer número, se decorrido
+trinta (30) minutos da primeira, não houver número legal. 
+</p>
+            <p>§1º - Os sócios não podem ser representados por procuração nem votar por
+correspondência.</p>
+            <p>§2º - Antes de abrir-se a Assembleia Geral, os sócios lançarão seus nomes,
+seguidos de respectivas assinaturas, no livro de presença. 
+</p>
+            <p>Art. 14 – A Assembleia Geral será presidida e secretariada pelo Presidente e pelo 1º
+Secretário da Associação, ou por seus substitutos, nas faltas e impedimentos, e,
+finalmente, em casos especiais, por quem os sócios presentes elegerem na ocasião.</p>
+            <p>Art. 15 – As deliberações da Assembleia Geral, ressalvados os casos expressos em
+contrário, são tomadas por maioria absoluta de votos, não se computando os votos
+em branco ou nulos. </p>
+            <p>Art. 16 – A ata dos trabalhos e resoluções da Assembleia Geral será lavrada no livro
+competente e será assinada pelos membros da mesa e sócios presentes à reunião. </p>
+            <p>Art. 17 – A Assembleia Geral é Ordinária e Extraordinária.</p>
+            <center><p><strong>SEÇÃO II </strong></p></center>
+            <center><p><strong>DA ASSEMBLEIA GERAL ORIDNÁRIA </strong></p></center>
+            <p>Art. 18 - A Assembleia Geral Ordinária será realizada anualmente, competindo-lhe
+apreciar as contas da Diretoria e o Parecer do Conselho Fiscal, eleger o Conselho
+Fiscal e a Diretoria, esta quando for o caso. </p>
+            <p>Art. 19 – A Assembleia Geral Ordinária realizar-se-á no primeiro (1º) decêndio do
+mês de abril, em data designada pela Diretoria e convocada na forma do Art. 12,
+constando do edital o que se acham à disposição dos sócios. </p>
+            <p>Art. 20 – Instalada a Assembleia Geral, proceder-se-á da seguinte forma:
+<br>a) a leitura do relatório e documentos a que se fizer menção, bem como, do parecer
+do Conselho Fiscal;
+<br>b) O Presidente abrirá em seguida a discussão sobre esses documentos, e
+encerrado-a, submeterá à votação as contas da Diretoria e o parecer do Conselho
+Fiscal.
+<br>Parágrafo Único – Não tomarão parte da votação os membros da Diretoria e do
+Conselho Fiscal. </p>
+            <p>Art. 21 – Após a deliberação sobre os assuntos mencionados nos artigos anteriores,
+e outros porventura constantes da pauta, a Assembleia Geral, quando for o caso,
+elegerá os membros da Diretoria e do Conselho Fiscal. </p>
+            <center><p><strong>SEÇÃO III </strong></p></center>
+            <center><p><strong>DA ASSEMBLEIA GERAL EXTRAORDINÁRIA</strong></p></center>
+            <p>Art. 22 – A Assembleia Geral Extraordinária reunir-se-á a qualquer tempo, a critério
+da Diretoria, do Conselho Fiscal, ou, por convocação de pelo menos 1/3 (um terço)
+dos sócios em gozo de seus direitos. 
+</p>
+            <p>Art. 23 – A Assembleia Geral Extraordinária que tiver por fim a reforma do Estatuto,
+se instalará na conformidade do Art. 11, e, anteriormente disposto. </p>
+            <center><p><strong>CAPÍTULO V</strong></p></center>
+            <center><p><strong>DA DIRETORIA </strong></p></center>
+            <p>Art. 24 – A Diretoria, que se renovará bienalmente, será constituída de 04 (quatro)
+membros eleitos pela Assembleia Geral, sendo 01 (um) Presidente, 01 (um) VicePresidente, 01 (um) Secretário e 01 (um) Tesoureiro, não percebendo seus titulares
+qualquer remuneração. </p>
+            <p>Art. 25 – Compete a Diretoria:
+<br>a) executar as deliberações da Assembleia Geral;
+<br>b) prestar contas, anualmente, a Assembleia Geral;
+<br>c) praticar todos os atos de livre gestão, e resolver sobre os casos omissos neste
+Estatuto;
+<br>d) convocar a Assembleia Geral;
+<br>e) aprovar a inscrição de sócios;
+<br>f) conceder, por decisão unânime, o título de sócio benemérito às pessoas que
+tenham de alguma forma ajudado ou prestado relevantes serviços ao Ferroviário
+Atlético Clube. </p>
+            <p>Art. 26 – A Diretoria reunir-se-á, ordinariamente, uma vez por mês, e,
+extraordinariamente, quando necessário, funcionando no mínimo com a presença de
+03 (três) membros.
+<br>Parágrafo Único – As deliberações, que serão registradas em ata, tomar-se-ão por
+maioria de votos, cabendo ao Presidente, em caso de empate, votar pela segunda
+vez. </p>
+            <p>Art. 27 – Qualquer dos cargos da Diretoria será declarado vago em reunião para
+esse fim, especialmente convocada, quando o respectivo ocupante deixar de
+comparecer, sem motivo justificado por escrito a três reuniões ordinárias
+consecutivas ou cinco alternadas. </p>
+            <p>Art. 28 – Compete ao Presidente:
+<br>a) presidir as reuniões da Diretoria;
+<br>b) convocar e presidir as Assembleias Gerais;
+<br>c) representar a Associação perante os poderes públicos e nos atos da vida civil;
+<br>Parágrafo Único – Em suas faltas ou impedimentos, o Presidente será substituído,
+sucessivamente, pelos demais membros da Diretoria, na ordem enumerada no Art.
+24 acima. </p>
+            <p>Art. 29 – Compete ao Vice-Presidente:
+<br>a) substituir o Presidente em suas faltas e impedimentos;
+<br>b) executar as atribuições delegadas pelo Presidente ou pela Diretoria.</p>
+            <p>Art. 30 – Compete ao Secretário:
+<br>a) substituir o Vice-Presidente em suas faltas e impedimentos;
+<br>b) superintender os serviços da Secretaria;
+<br>c) redigir a correspondência da Associação, ler os documentos que forem à mesa
+quando de reuniões de Diretoria ou Assembleia Geral;</p>
+            <p>Art. 31 – Compete ao Tesoureiro:
+<br>a) arrecadar e ter sob sua guarda e responsabilidade as contribuições dos
+associados;
+<br>b) efetuar os pagamentos determinados pelo Presidente ou pela Diretoria;
+<br>c) depositar dinheiro nas contas da Associação em estabelecimento bancário oficial
+ou privado, e deles levantar, quando for o caso, as importâncias autorizadas,
+assinando os cheques ou quaisquer documentos referentes ao numerário,
+juntamente com o Presidente;
+<br>d) apresentar trimestralmente à Diretoria relatório sobre a situação da entidade.</p>
+
+<center><p><strong>CAPÍTULO VII</strong></p></center>
+<center><p><strong>DAS ELEIÇÕES</strong></p></center>
+<p>Art. 34 – No primeiro decênio do mês de abril dos anos ímpares, na Assembleia
+Geral Ordinária realizar-se-ão eleições para a Diretoria, e, anualmente, para os
+membros do Conselho Fiscal, ocorrendo a posse dos eleitos imediatamente após a
+apuração dos votos e proclamação do resultado.</p>
+<p>Art. 35 – A chapa dos candidatos deverá encontrar-se registrada na Associação até
+setenta e duas horas (72 hs) antes da eleição. </p>
+<p>§1º - O requerimento deverá vir obrigatoriamente acompanhado de autorização
+expressa de inclusão de nomes dos autorizadores na composição da chapa; </p>
+<p>§2º - Após o registro não se permitirá alterações de nomes ou rasuras, salvo em
+caso de falecimento;</p>
+<p>§3º - Não é permitida a inclusão de um mesmo associado em mais de uma chapa</p>
+<p>Art. 36 – A eleição processar-se-á através de Assembleia Geral na qual só poderão
+tomar parte os sócios em pleno gozo de seus direitos estatutários. </p>
+<p>Art. 37 – Instalada a Assembleia Geral, na forma estabelecida no Capítulo V, far-seá a votação em escrutínio secreto, considerando-se eleita a chapa que obtiver a
+maioria dos votos. 
+</p>
+
+
+
+<center><p><strong>CAPÍTULO VIII </strong></p></center>
+<center><p><strong>FONTES DE RECEITA</strong></p></center>
+<p>Art. 38 – As fontes de receita da Associação serão compostas de doações e
+contribuições. </p>
+<p>Art. 39 – A contribuição mensal do sócio efetivo corresponderá a um valor fixado em
+moeda corrente por meio de Assembleia Geral, podendo ser alterada. </p>
+
+
+<center><p><strong>CAPÍTULO IX</strong></p></center>
+<center><p><strong>DAS DISPOSIÇÕES GERAIS</strong></p></center>
+<p>Art. 40 – Os sócios não responderão solidariamente e/ou subsidiariamente pelas
+obrigações da Associação. </p>
+<p>Art. 41 – Para dissolução da Associação, por maioria absoluta, deverá ser
+convocada Assembleia Geral Extraordinária presentes no mínimo 2/3 (dois terços)
+dos associados. </p>
+
+<h2 class="section-title">FERROVIÁRIO ASSOCIAÇÃO</h2>
+<p><strong>Presidente:</strong> Rodger Raniery Holanda Costa<br>
+<strong>Vice-Presidente:</strong> Francisco Barros Machado Neto<br>
+<strong>Diretor de Marketing:</strong> Moisés Viana Saraiva Jr.<br>
+<strong>Diretor de Comunicação:</strong> Felipe Lima Cacau<br>
+<strong>Diretor de Patrimônio:</strong> José Airton de Oliveira<br>
+<strong>Diretor de Cultura e Artes:</strong> Jeff Peixoto<br>
+<strong>Diretor de Esportes:</strong> Wander Alencar<br>
+<strong>Diretor de Governança e Estratégia:</strong> Edinardo Costa<br>
+<strong>Diretor Social:</strong> Flávio José de Sousa<br>
+<strong>Diretor Administrativo/Financeiro:</strong> José Maria Costa Filho<br>
+<strong>Diretor Jurídico:</strong> José Valdir Ximenes Neto<br>
+<strong>Diretor Institucional:</strong> João Gomes Frota Neto<br>
+<strong>Presidente de Honra:</strong> Valdir Queiroz Sampaio</p>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+
+    <!-- =========================================================
+     CONTATO
+========================================================= -->
+
+    <section class="section-pad" id="contato">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2 class="section-title">Fale com o clube</h2>
+
+            <p class="section-sub">
+              Dúvidas, parcerias ou imprensa — a Nação Coral responde.
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-wrap reveal">
+          <!-- ================= FORMULÁRIO REAL ================= -->
+
+          <form
+            id="contactForm"
+            action="https://formsubmit.co/presidencia@aafac.com.br"
+            method="POST"
+          >
+            <!-- CONFIGURAÇÕES DO FORMULÁRIO -->
+
+            <input
+              type="hidden"
+              name="_subject"
+              value="Nova mensagem recebida pelo site da AAFAC"
+            />
+
+            <input type="hidden" name="_template" value="table" />
+
+            <input type="hidden" name="_captcha" value="true" />
+
+            <input
+              type="hidden"
+              name="_next"
+              value="https://www.ferroviario.com.br/"
+            />
+
+            <!-- NOME -->
+
+            <div class="field">
+              <label for="cName"> Nome </label>
+
+              <input
+                id="cName"
+                name="Nome"
+                type="text"
+                placeholder="Digite seu nome"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <!-- EMAIL -->
+
+            <div class="field">
+              <label for="cEmail"> E-mail </label>
+
+              <input
+                id="cEmail"
+                name="E-mail"
+                type="email"
+                placeholder="seuemail@exemplo.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <!-- ASSUNTO -->
+
+            <div class="field">
+              <label for="cSubject"> Assunto </label>
+
+              <input
+                id="cSubject"
+                name="Assunto"
+                type="text"
+                placeholder="Assunto da mensagem"
+                required
+              />
+            </div>
+
+            <!-- MENSAGEM -->
+
+            <div class="field">
+              <label for="cMsg"> Mensagem </label>
+
+              <textarea
+                id="cMsg"
+                name="Mensagem"
+                placeholder="Digite sua mensagem..."
+                required
+              ></textarea>
+            </div>
+
+            <!-- BOTÃO -->
+
+            <button type="submit" class="btn btn-primary" id="submitBtn">
+              Enviar mensagem
+            </button>
+
+            <!-- STATUS -->
+
+            <p class="form-note" id="formNote" aria-live="polite"></p>
+          </form>
+
+          <!-- ================= INFORMAÇÕES ================= -->
+
+          <div class="contact-info">
+            <div class="ci-item">
+              <span class="k"> Endereço </span>
+
+              <div class="v">Vila Olímpica Elzir Cabral — Fortaleza, CE</div>
+            </div>
+
+            <div class="ci-item">
+              <span class="k"> Telefone </span>
+
+              <div class="v">+55 85 9280-9658</div>
+            </div>
+
+            <div class="ci-item">
+              <span class="k"> E-mail </span>
+
+              <div class="v">presidencia@aafac.com.br</div>
+            </div>
+
+            <!-- ================= MAPA ================= -->
+
+            <div class="map-ph">
+              <iframe
+                src="https://www.google.com/maps?q=Rua%20Dona%20Filó,%20650,%20Barra%20do%20Ceará,%20Fortaleza,%20CE&output=embed"
+                width="100%"
+                height="400"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Localização da AAFAC no Google Maps"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+     FOOTER
+========================================================= -->
+
+    <footer>
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="brand">
+              <div class="brand-mark">
+                <img
+                  src="75d0d4bb-3110-4ba2-a490-e7b0d74856f8.png"
+                  alt="Logo AAFAC"
+                />
+              </div>
+
+              <div class="brand-name">
+                FERROVIÁRIO
+
+                <small> Atlético Clube · 1933 </small>
+              </div>
+            </div>
+
+            <p>Ferroviário Atlético Clube — Fortaleza, Ceará, Brasil.</p>
+
+            <div class="footer-social">
+              <a
+                href="https://www.instagram.com/aafac1933/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                IG
+              </a>
+
+              <a href="#" aria-label="Facebook"> FB </a>
+
+              <a href="#" aria-label="YouTube"> YT </a>
+
+              <a href="#" aria-label="TikTok"> TT </a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h5>Clube</h5>
+
+            <a href="#noticias"> Notícias </a>
+
+            <a href="#clube"> História </a>
+          </div>
+
+          <div class="footer-col">
+            <h5>Institucional</h5>
+
+            <a href="#titulos"> Títulos </a>
+
+            <a href="#programas"> Transparência </a>
+
+            <a href="#contato"> Contato </a>
+          </div>
+
+          <div class="footer-col">
+            <h5>Painel administrativo</h5>
+
+            <a href="#"> Acesso restrito </a>
+
+            <p
+              style="
+                font-size: 12.5px;
+                color: var(--steel-light);
+                margin-top: 4px;
+              "
+            >
+              Reservado para gestão de notícias, elenco, resultados e loja.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>
+            © 2026 Ferroviário Atlético Clube. Todos os direitos reservados.
+          </span>
+
+          <span> Fortaleza · Ceará · Brasil </span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+    <script>
+      /* =========================================================
+   HEADER SCROLL
+========================================================= */
+
+      const header = document.getElementById("siteHeader");
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          header.classList.toggle("scrolled", window.scrollY > 40);
+        },
+        { passive: true },
+      );
+
+      /* =========================================================
+   MENU MOBILE
+========================================================= */
+
+      const hamburgerBtn = document.getElementById("hamburgerBtn");
+
+      const mobileNav = document.getElementById("mobileNav");
+
+      hamburgerBtn.addEventListener("click", () => {
+        const isOpen = mobileNav.classList.toggle("open");
+
+        hamburgerBtn.classList.toggle("active", isOpen);
+
+        hamburgerBtn.setAttribute("aria-expanded", isOpen);
+      });
+
+      mobileNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileNav.classList.remove("open");
+
+          hamburgerBtn.classList.remove("active");
+
+          hamburgerBtn.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      /* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+      const revealEls = document.querySelectorAll(".reveal");
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in-view");
+
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12,
+        },
+      );
+
+      revealEls.forEach((element) => {
+        revealObserver.observe(element);
+      });
+
+      /* =========================================================
+   CONTADOR DOS TÍTULOS
+========================================================= */
+
+      const counters = document.querySelectorAll(".title-num");
+
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const element = entry.target;
+
+              const target = parseInt(element.dataset.count, 10);
+
+              const duration = 900;
+
+              const start = performance.now();
+
+              function tick(now) {
+                const progress = Math.min((now - start) / duration, 1);
+
+                const current = Math.floor(progress * target);
+
+                element.textContent = current;
+
+                if (progress < 1) {
+                  requestAnimationFrame(tick);
+                } else {
+                  element.textContent = target;
+                }
+              }
+
+              requestAnimationFrame(tick);
+
+              counterObserver.unobserve(element);
+            }
+          });
+        },
+        {
+          threshold: 0.4,
+        },
+      );
+
+      counters.forEach((element) => {
+        counterObserver.observe(element);
+      });
+
+      /* =========================================================FORMULÁRIO DE CONTATO========================================================= */
+
+      const contactForm = document.getElementById("contactForm");
+
+      const formNote = document.getElementById("formNote");
+
+      const submitBtn = document.getElementById("submitBtn");
+
+      contactForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        submitBtn.disabled = true;
+
+        submitBtn.textContent = "Enviando...";
+
+        formNote.textContent = "";
+
+        formNote.className = "form-note";
+
+        const formData = new FormData(contactForm);
+
+        try {
+          const response = await fetch(
+            "https://formsubmit.co/ajax/presidencia@aafac.com.br",
+            {
+              method: "POST",
+
+              headers: {
+                Accept: "application/json",
+              },
+
+              body: formData,
+            },
+          );
+
+          const data = await response.json();
+
+          if (response.ok && data.success) {
+            formNote.textContent =
+              "Mensagem enviada com sucesso! Obrigado pelo contato com a AAFAC.";
+
+            formNote.className = "form-note success";
+
+            contactForm.reset();
+
+            submitBtn.textContent = "Mensagem enviada ✓";
+
+            setTimeout(() => {
+              submitBtn.textContent = "Enviar mensagem";
+
+              submitBtn.disabled = false;
+            }, 4000);
+          } else {
+            throw new Error("Falha no envio");
+          }
+        } catch (error) {
+          formNote.textContent =
+            "Não foi possível enviar a mensagem. Tente novamente em alguns instantes.";
+
+          formNote.className = "form-note error";
+
+          submitBtn.textContent = "Enviar mensagem";
+
+          submitBtn.disabled = false;
+        }
+      });
+    </script>
+  </body>
+</html>
