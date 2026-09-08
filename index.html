@@ -669,21 +669,16 @@
       }
 
       .news-main {
-        position: relative;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    min-height: 415px;
+    border-radius: 4px;
+}
 
-        border-radius: 5px;
-
-        overflow: hidden;
-
-        min-height: 460px;
-
-        display: flex;
-        align-items: flex-end;
-
-        background: var(--black-3);
-
-        border: 1px solid var(--line);
-      }
+.news-main:hover .ft-ofc {
+    transform: scale(1.03);
+}
 
       .ph-photo {
         position: absolute;
@@ -711,46 +706,56 @@
       }
 
       .ph-label {
-        position: absolute;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    border-radius: 8px;
+    overflow: hidden;
+}
 
-        top: 16px;
-        left: 16px;
+.ft-ofc {
+    position: absolute;
+    inset: 0;
 
-        font-size: 10.5px;
+    width: 100%;
+    height: 100%;
 
-        letter-spacing: 0.8px;
+    object-fit: cover;
+    object-position: center;
 
-        color: rgba(244, 242, 236, 0.55);
+    z-index: 0;
 
-        border: 1px solid rgba(244, 242, 236, 0.22);
-
-        padding: 5px 9px;
-
-        border-radius: 3px;
-
-        background: rgba(12, 12, 13, 0.45);
-
-        backdrop-filter: blur(4px);
-      }
+    transition: transform 0.4s ease;
+}
 
       .news-scrim {
-        position: absolute;
-        inset: 0;
+    position: absolute;
+    inset: 0;
 
-        background: linear-gradient(
-          0deg,
-          rgba(0, 0, 0, 0.86) 0%,
-          rgba(0, 0, 0, 0.15) 55%,
-          transparent 75%
-        );
-      }
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.92) 0%,
+        rgba(0, 0, 0, 0.55) 45%,
+        rgba(0, 0, 0, 0.10) 100%
+    );
+
+    z-index: 1;
+}
 
       .news-content {
-        position: relative;
-        z-index: 2;
+    position: absolute;
 
-        padding: 32px;
-      }
+    left: 32px;
+    right: 32px;
+    bottom: 28px;
+
+    z-index: 2;
+}
 
       .news-cat {
         display: inline-block;
@@ -1753,7 +1758,7 @@
      HERO
 ========================================================= -->
 
-    <section class="hero" id="inicio" style="background-image: url('./WhatsApp\ Image\ 2026-07-22\ at\ 20.04.38.jpeg'); background-size: cover;"
+    <section class="hero" id="inicio" style="background-image: url('./ftmelhorada4.jpg'); background-size: cover;"
   
       <div class="hero-bg">
         <div class="glow"></div>
@@ -1837,22 +1842,24 @@
           <a href="#" class="news-main">
             <div class="ph-photo warm"></div>
 
-            <span class="ph-label"> imagem: substituir por foto oficial </span>
+            <span class="ph-label">
+    <img class="ft-ofc" src="casa de craque.PNG" alt="Casa de Craque">
+</span>
 
             <div class="news-scrim"></div>
 
             <div class="news-content">
-              <span class="news-cat"> Futebol Profissional </span>
+              <span class="news-cat"> Casa de Craque </span>
 
               <h3 class="news-title">
-                [Placeholder] Título da notícia em destaque sobre o elenco coral
+                CASA DE CRAQUE: O futuro que transforma
               </h3>
 
-              <p class="news-date">--/--/---- · Redação FAC</p>
+              <p class="news-date">27/05/2026 · O Casa de Craque oferece práticas esportivas planejadas, inclusivas e lúdicas, promovendo o desenvolvimento técnico, humano e social de crianças e adolescentes.</p>
             </div>
           </a>
 
-          <div class="news-side">
+           <!-- =========================================================       <div class="news-side">
             <a href="#" class="news-small">
               <div class="thumb">
                 <div class="ph-photo"></div>
@@ -1908,13 +1915,11 @@
                 <p class="news-date">--/--/----</p>
               </div>
             </a>
-          </div>
-        </div>
+          </div>  
+        </div>   ========================================================= -->
 
-        <div class="news-footer reveal">
-          <a href="#" class="btn btn-outline"> Ver todas as notícias </a>
-        </div>
-      </div>
+        
+      </div>  
     </section>
 
 
